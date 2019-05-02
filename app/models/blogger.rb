@@ -6,4 +6,13 @@ class Blogger < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :age, numericality: { greater_than: 0 }
   validates :bio, presence: true, length: { minimum: 30 }
+
+  def total_likes
+    self.posts.map { |p| p.likes }.sum
+  end
+
+  def featured_posts
+    Post.where("blogger_id = ?", self.id).order(likes: :desc).limit(5)
+  end
+
 end

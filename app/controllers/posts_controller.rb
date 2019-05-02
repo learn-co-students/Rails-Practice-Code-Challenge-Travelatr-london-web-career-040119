@@ -14,7 +14,11 @@ class PostsController < ApplicationController
   def edit; end
 
   def create
-    @post = Post.new(post_params)
+    extra_params = {
+      creation_time: DateTime.now,
+      likes: 0
+    }
+    @post = Post.new(post_params.merge(extra_params))
     if @post.save
       flash[:success] = 'Post successfully created'
       redirect_to @post
@@ -57,6 +61,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:name, :bio, :age, :destination_id, :blogger_id)
+    params.require(:post).permit(:title, :content, :destination_id, :blogger_id)
   end
 end

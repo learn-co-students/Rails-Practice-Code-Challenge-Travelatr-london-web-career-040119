@@ -24,7 +24,7 @@ end
     Post.create(
       title: Faker::Hipster.sentence(3),
       content: Faker::Hipster.paragraphs(4),
-      likes: 0,
+      likes: (0..30).to_a.sample,
       blogger: blogger,
       creation_time: Faker::Time.between(DateTime.now - 120, DateTime.now),
       destination: Destination.all.sample

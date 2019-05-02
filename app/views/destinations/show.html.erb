@@ -1,0 +1,25 @@
+<h1> <%= @destination.name%> </h1>
+<h2> <%= @destination.country%> </h2>
+<div>
+  <p>The average age of all unique bloggers who have written about this destination:
+    <%= @destination.average_bloggers_age %>
+  </p>
+</div>
+
+<h2>Featured posts</h2>
+<ul>
+<% @destination.featured_posts.each do |post| %>
+  <li>
+    <%= link_to post.title, post %>
+  </li>
+<% end %>
+</ul>
+
+<h2>Most recent posts</h2>
+<ul>
+<% @destination.most_recent_posts.each do |post| %>
+  <li>
+    <%= link_to post.title, post %>
+  </li>
+<% end %>
+</ul>

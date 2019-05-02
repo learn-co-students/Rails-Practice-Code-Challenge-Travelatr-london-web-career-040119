@@ -8,6 +8,6 @@ class Post < ApplicationRecord
   # must have title
   validates :title, presence: true
   # content longer than 100 characters
-  validates :content, presence: true
+  validates :content, length: { minimum: 100 }
   validates :creation_time, presence: true
 end

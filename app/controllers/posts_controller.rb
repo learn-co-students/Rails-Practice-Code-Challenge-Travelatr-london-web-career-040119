@@ -44,6 +44,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def like
+    @post.likes += 1
+    @post.save
+    redirect_to @post
+  end
+
   private
 
   def find_post

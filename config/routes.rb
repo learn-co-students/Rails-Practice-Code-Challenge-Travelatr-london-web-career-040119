@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :bloggers, only: %i[new create show]
   resources :posts, only: %i[new create edit update show]
   resources :destinations, only: %i[show]
+
+  get 'posts/:id/like', to: 'posts#like', as:'like_post'
 end

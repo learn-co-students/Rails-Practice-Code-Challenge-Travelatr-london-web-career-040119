@@ -1,0 +1,10 @@
+<h1><%= @post.title %></h1>
+<h2><%= link_to @post.destination.name, @post.destination %></h2>
+
+<div>Written by:<%= link_to @post.blogger.name, @post.blogger %></div>
+<div>Published:<%= @post.creation_time %></div>
+
+<div><%= @post.content %></div>
+<div>Likes: <%= @post.likes %></div>
+
+<%# like button %>

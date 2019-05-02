@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :destinations, only: %i[show]
 
   get 'posts/:id/like', to: 'posts#like', as: 'like_post'
+
+  get '/', to: 'posts#index'
 end

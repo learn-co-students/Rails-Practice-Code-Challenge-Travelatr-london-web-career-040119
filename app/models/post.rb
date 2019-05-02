@@ -6,4 +6,5 @@ class Post < ApplicationRecord
   validates :title, presence: true
   # content longer than 100 characters
   validates :content, presence: true
+  validates :creation_time, presence: true
 end

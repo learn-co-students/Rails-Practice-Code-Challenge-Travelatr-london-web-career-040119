@@ -7,18 +7,18 @@
 </div>
 
 <h2>Featured posts</h2>
-<ul>
+<ul class="list-group">
 <% @destination.featured_posts.each do |post| %>
-  <li>
+  <li class="list-group-item">
     <%= link_to post.title, post %>
   </li>
 <% end %>
 </ul>
 
 <h2>Most recent posts</h2>
-<ul>
+<ul class="list-group">
 <% @destination.most_recent_posts.each do |post| %>
-  <li>
+  <li class="list-group-item">
     <%= link_to post.title, post %>
   </li>
 <% end %>

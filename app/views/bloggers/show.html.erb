@@ -1,0 +1,16 @@
+<h1><%= @blogger.name %></h1>
+
+<p><%= @blogger.bio %></p>
+<h2 class="h4">Age: <%= @blogger.age %></h2>
+<h2 class="h4">Total likes: <%= @blogger.total_likes %></h2>
+
+<% unless @blogger.posts.count == 0 %>
+  <h2 class="mt-4">Featured posts</h2>
+  <ul class="list-group">
+  <% @blogger.featured_posts.each do |post| %>
+    <li class="list-group-item">
+      <%= link_to post.title, post %>
+    </li>
+  <% end %>
+  </ul>
+<% end %>

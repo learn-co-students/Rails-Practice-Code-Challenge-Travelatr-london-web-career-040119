@@ -1,0 +1,13 @@
+
+<h1><%= @post.title %></h1>
+<hr>
+<h6 class="font-weight-bold">Destination: <%= link_to @post.destination.name, @post.destination %></h6>
+
+<div class="h6 font-weight-bold">Written by:<%= link_to @post.blogger.name, @post.blogger %></div>
+<div class="h6 font-weight-bold">Published:<%= @post.creation_time %></div>
+
+<div><%=sanitize @post.content %></div>
+<div class="font-weight-bold mb-4">Likes: <%= @post.likes %></div>
+
+<%= link_to "Like", like_post_path(@post), class: "btn btn-primary" %>
+<%= link_to "Edit post", edit_post_path(@post), class: "btn btn-primary" %>
